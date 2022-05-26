@@ -2,6 +2,7 @@
 name = "pyrandomwiki"
 version = "0.1.0"
 description = "Python Random Wiki"
+authors = ["Jess Primero <jprimero.ayfvv@slmail.me>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/jprimero/pyrandomwiki"
