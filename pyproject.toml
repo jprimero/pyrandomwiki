@@ -24,3 +24,13 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 pyrandomwiki = "pyrandomwiki.console:main"
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["pyrandomwiki"]
+
+[tool.coverage.report]
+show_missing = true
