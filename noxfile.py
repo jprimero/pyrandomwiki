@@ -23,3 +23,6 @@ def black(session):
     args = session.posargs or locations
     session.install("black")
     session.run("black", *args)
+
+
+nox.options.sessions = "lint", "tests"
