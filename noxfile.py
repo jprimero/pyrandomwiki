@@ -8,7 +8,7 @@ def tests(session):
     session.run("pytest", *args)
 
 
-locations = "src", "tests", "noxfile.py"
+locations = "src", "noxfile.py"
 
 
 @nox.session(python=["3.9"])
