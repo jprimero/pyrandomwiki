@@ -5,3 +5,4 @@ max-line-length = 80
 max-complexity = 10
 application-import-names = pyrandomwiki,tests
 import-order-style = google
+per-file-ignores = src/tests/*:S101
