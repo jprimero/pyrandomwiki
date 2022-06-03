@@ -3,6 +3,19 @@ import tempfile
 import nox
 
 
+def install_with_constraints(session, *args, **kwargs):
+    with tempfile.NamedTemporaryFile() as requirements:
+        session.run(
+            "poetry",
+            "export",
+            "--dev",
+            "--format=requirements.txt",
+            f"--output={requirements.name}",
+            external=True,
+        )
+        session.install(f"--constraint={requirements.name}", *args, **kwargs)
+
+
 @nox.session(python=["3.9"])
 def tests(session):
     args = session.posargs or ["--cov", "-m", "not e2e"]
