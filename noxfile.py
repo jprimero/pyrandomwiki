@@ -29,7 +29,8 @@ locations = "src", "noxfile.py"
 @nox.session(python=["3.9"])
 def lint(session):
     args = session.posargs or locations
-    session.install(
+    install_with_constraints(
+        session,
         "flake8",
         "flake8-bandit",
         "flake8-black",
@@ -42,7 +43,7 @@ def lint(session):
 @nox.session(python=["3.9"])
 def black(session):
     args = session.posargs or locations
-    session.install("black")
+    install_with_constraints(session, "black")
     session.run("black", *args)
 
 
@@ -58,7 +59,7 @@ def safety(session):
             f"--output={requirements.name}",
             external=True,
         )
-        session.install("safety")
+        install_with_constraints(session, "safety")
         session.run("safety", "check", f"--file={requirements.name}", "--full-report")
 
 
