@@ -82,4 +82,4 @@ def pytype(session):
     session.run("pytype", *args)
 
 
-nox.options.sessions = "lint", "safety", "mypy", "tests"
+nox.options.sessions = "lint", "safety", "mypy", "pytype", "tests"
