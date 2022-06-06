@@ -67,4 +67,11 @@ def safety(session):
         session.run("safety", "check", f"--file={requirements.name}", "--full-report")
 
 
-nox.options.sessions = "lint", "safety", "tests"
+@nox.session(python=["3.9"])
+def mypy(session):
+    args = session.posargs or locations
+    install_with_constraints(session, "mypy")
+    session.run("mypy", *args)
+
+
+nox.options.sessions = "lint", "safety", "mypy", "tests"
