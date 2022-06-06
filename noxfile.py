@@ -77,7 +77,7 @@ def mypy(session):
 @nox.session(python=["3.9"])
 def pytype(session):
     """Run the static type checker."""
-    args = session.args or ["--disable=import-error", *locations]
+    args = session.posargs or ["--disable=import-error", *locations]
     install_with_constraints(session, "pytype")
     session.run("pytype", *args)
 
