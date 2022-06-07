@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import Any
 
 import click
 import requests
@@ -13,7 +12,7 @@ class Page:
     extract: str
 
 
-def random_page(language: str = "en") -> Any:
+def random_page(language: str = "en") -> Page:
     url = API_URL.format(language=language)
 
     try:
