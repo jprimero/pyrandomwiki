@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 
 import click
+import desert
+import marshmallow
 import requests
 
 API_URL: str = "https://{language}.wikipedia.org/api/rest_v1/page/random/summary"
@@ -10,6 +12,9 @@ API_URL: str = "https://{language}.wikipedia.org/api/rest_v1/page/random/summary
 class Page:
     title: str
     extract: str
+
+
+schema = desert.schema(Page, meta={"unknown": marshmallow.EXCLUDE})
 
 
 def random_page(language: str = "en") -> Page:
