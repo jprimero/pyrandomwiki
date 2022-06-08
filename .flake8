@@ -7,4 +7,4 @@ application-import-names = pyrandomwiki,tests
 import-order-style = google
 per-file-ignores =
     src/tests/*:S101,ANN
-    noxfile.py:ANN
+    noxfile.py:ANN401
