@@ -82,4 +82,15 @@ def pytype(session):
     session.run("pytype", *args)
 
 
+package = "pyrandomwiki"
+
+
+@nox.session(python=["3.9"])
+def typeguard(session):
+    args = session.posargs or ["-m", "not e2e"]
+    session.run("poetry", "install", "--no-dev", external=True)
+    install_with_constraints(session, "pytest", "pytest-mock", "typeguard")
+    session.run("pytest", f"--typeguard-packages={package}", *args)
+
+
 nox.options.sessions = "lint", "safety", "mypy", "pytype", "tests"
