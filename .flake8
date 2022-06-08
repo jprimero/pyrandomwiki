@@ -6,5 +6,5 @@ max-complexity = 10
 application-import-names = pyrandomwiki,tests
 import-order-style = google
 per-file-ignores =
-    src/tests/*:S101,ANN
+    src/tests/*:S101
     noxfile.py:ANN401
