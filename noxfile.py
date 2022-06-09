@@ -32,7 +32,7 @@ def tests(session: Session) -> None:
     session.run("pytest", *args)
 
 
-locations = "src", "noxfile.py"
+locations = "src", "noxfile.py", "docs/conf.py"
 
 
 @nox.session(python=["3.9"])
