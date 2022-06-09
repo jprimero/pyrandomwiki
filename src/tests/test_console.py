@@ -1,3 +1,4 @@
+"""Test cases for the console module."""
 from unittest.mock import Mock
 
 import click.testing
