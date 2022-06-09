@@ -115,4 +115,11 @@ def xdoctest(session: Session) -> None:
     session.run("python", "-m", "xdoctest", package, *args)
 
 
+@nox.session(python=["3.9"])
+def docs(session: Session) -> None:
+    """Build the documentation."""
+    install_with_constraints(session, "sphinx")
+    session.run("sphinx-build", "docs", "docs/_build")
+
+
 nox.options.sessions = "lint", "safety", "mypy", "pytype", "tests"
