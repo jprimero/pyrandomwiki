@@ -123,4 +123,4 @@ def coverage(session: Session) -> None:
     session.run("codecov", *session.posargs)
 
 
-nox.options.sessions = "lint", "safety", "mypy", "pytype", "tests"
+nox.options.sessions = "lint", "safety", "pytype", "tests"
