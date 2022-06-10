@@ -3,3 +3,7 @@
 [![PyPI](https://img.shields.io/pypi/v/pyrandomwiki.svg)](https://pypi.org/project/pyrandomwiki/)
 
 # pyrandomwiki
+
+Fetch random topics from Wikipedia.
+
+Nothing serious here.
