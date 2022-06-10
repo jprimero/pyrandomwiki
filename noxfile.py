@@ -79,14 +79,6 @@ def safety(session: Session) -> None:
 
 
 @nox.session(python=["3.9"])
-def mypy(session: Session) -> None:
-    """Type-check using mypy."""
-    args = session.posargs or locations
-    install_with_constraints(session, "mypy")
-    session.run("mypy", *args)
-
-
-@nox.session(python=["3.9"])
 def pytype(session: Session) -> None:
     """Type-check using pytype."""
     args = session.posargs or ["--disable=import-error", *locations]
